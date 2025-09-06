@@ -19,8 +19,7 @@ import android.provider.Settings
 import android.util.Log
 import co.aospa.xiaomiparts.utils.dlog
 
-/* 
- * Service used to relay high touch polling rate setting to touch panel.
+/* * Service used to relay high touch polling rate setting to touch panel.
  */
 class HighTouchPollingService : Service() {
 
@@ -91,7 +90,7 @@ class HighTouchPollingService : Service() {
 
     private fun writeCurrentValue() {
         dlog(TAG, "writeCurrentValue: isEnabled=$isEnabled isPowerSave=$isPowerSaveMode")
-        TouchFeatureWrapper.setModeValue(
+        TouchFeatureWrapper.setTouchMode(
             MODE_TOUCH_REPORT_RATE,
             if (isEnabled && !isPowerSaveMode) 1 else 0
         )

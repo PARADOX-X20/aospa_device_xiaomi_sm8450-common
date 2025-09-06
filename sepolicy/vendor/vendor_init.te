@@ -1,5 +1,11 @@
-set_prop(init, vendor_displayfeature_prop)
-set_prop(vendor_init, vendor_displayfeature_prop)
-set_prop(vendor_init, vendor_fp_prop)
+# Allow vendor init to set SSR property
 set_prop(vendor_init, vendor_ssr_prop)
-set_prop(vendor_init, vendor_thermal_prop)
+
+# Allow vendor init to set NFC property
+set_prop(vendor_init, vendor_nfc_mi_prop)
+
+# Allow vendor_init to set thermal prop
+set_prop(vendor_init, vendor_thermal_normal_prop)
+
+# Cgroup
+allow vendor_init cgroup:file { getattr };

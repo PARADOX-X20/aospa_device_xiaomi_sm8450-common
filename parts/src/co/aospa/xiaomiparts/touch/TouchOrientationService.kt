@@ -28,7 +28,7 @@ class TouchOrientationService : Service() {
             dlog(TAG, "rotation=$value")
             runCatching {
                     // Lucky for us, Surface.ROTATION_* directly translates into touchpanel values
-                    TouchFeatureWrapper.setModeValue(MODE_TOUCH_PANEL_ORIENTATION, value)
+                    TouchFeatureWrapper.setTouchMode(MODE_TOUCH_PANEL_ORIENTATION, value)
                 }
                 .onFailure { e -> Log.e(TAG, "Failed to set touch panel orientation", e) }
         }
