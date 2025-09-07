@@ -31,4 +31,11 @@ vendor.xiaomi.sensor.citsensorservice::ICitSensorService   u:object_r:vendor_hal
 vendor.qti.sla.service::ISlaService             u:object_r:hal_slaservice_hwservice:s0
 
 # Touchfeature
+<<<<<<< HEAD
 vendor.xiaomi.hw.touchfeature::ITouchFeature           u:object_r:hal_touchfeature_xiaomi_hwservice:s0
+=======
+vendor.xiaomi.hw.touchfeature::ITouchFeature                 u:object_r:hal_touchfeature_xiaomi_hwservice:s0
+
+# Label for our touch feature hardware service
+vendor.xiaomi.hw.touchfeature                             u:object_r:vendor_xiaomi_touch_hal_service:s0
+>>>>>>> e8abad1 (Fixed Trees)

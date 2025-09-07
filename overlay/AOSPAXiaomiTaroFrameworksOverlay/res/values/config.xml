@@ -69,7 +69,14 @@
          charging enabled status regardless of the current status. -->
     <bool name="config_chargingControlToggleSetAlways">true</bool>
 
+<<<<<<< HEAD
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
 
+=======
+    
+    <bool name="config_supportDoubleTapWake">true</bool>
+
+
+>>>>>>> e8abad1 (Fixed Trees)
 </resources>

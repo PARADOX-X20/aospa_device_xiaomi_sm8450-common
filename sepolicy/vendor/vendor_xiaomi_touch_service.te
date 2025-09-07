@@ -1,0 +1,21 @@
+# Defines the security context for our running service
+type vendor_xiaomi_touch_service, domain;
+type vendor_xiaomi_touch_service_exec, exec_type, file_type, vendor_file_type;
+
+# Defines the security context for the hardware service itself
+type vendor_xiaomi_touch_hal_service, hwservice_manager_type;
+
+# Defines a type for the sysfs node we need to access
+type sysfs_goodix_touch, fs_type, sysfs_type;
+
+# Allow init to start our service
+init_daemon_domain(vendor_xiaomi_touch_service)
+
+# Allow our service to register itself as a hardware service
+add_hwservice(vendor_xiaomi_touch_service, vendor_xiaomi_touch_hal_service)
+
+# Allow apps (like XiaomiParts) to find and use our hardware service
+allow system_app vendor_xiaomi_touch_hal_service:hwservice_manager find;
+
+# Allow our service to write to the Goodix sysfs node
+allow vendor_xiaomi_touch_service sysfs_goodix_touch:file rw_file_perms;

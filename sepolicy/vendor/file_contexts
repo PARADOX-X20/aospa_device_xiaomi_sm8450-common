@@ -200,6 +200,7 @@
 /(odm|system/odm|vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.vibratorfeature\.service u:object_r:hal_vibrator_default_exec:s0
 /sys/class/qcom-haptics(/.*)?                     u:object_r:vendor_sysfs_vibrator:s0
 
+<<<<<<< HEAD
 # Wifi
 /data/vendor/mac_addr(/.*)? u:object_r:vendor_mac_vendor_data_file:s0
 /vendor/bin/nv_mac u:object_r:vendor_wcnss_service_exec:s0
@@ -207,3 +208,13 @@
 # Xiaomi thermal daemon
 /(vendor|system/vendor)/bin/mi_thermald     u:object_r:mi_thermald_exec:s0
 /data/vendor/thermal(/.*)?                  u:object_r:vendor_thermal_data_file:s0
+=======
+# Wakeup nodes
+/sys/devices/platform/soc/soc:qcom,msm-audio-apr/soc:qcom,msm-audio-apr:qcom,q6core-audio/soc:qcom,msm-audio-apr:qcom,q6core-audio:sound/Listen\s[0-9]+\sAudio\sService/wakeup/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
+
+# Label for our service executable
+/vendor/bin/hw/vendor\.xiaomi\.hw\.touchfeature-service  u:object_r:vendor_xiaomi_touch_service_exec:s0
+
+# Label for the Goodix DT2W sysfs node
+/sys/devices/platform/goodix_ts\.0/goodix_ts_double_tap    u:object_r:sysfs_goodix_touch:s0
+>>>>>>> e8abad1 (Fixed Trees)
